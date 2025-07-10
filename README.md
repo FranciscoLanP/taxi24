@@ -1,7 +1,7 @@
 # taxi24
 
 Documentacion:
-**Cuando se descargue el proyecto haga un "npm install" en consola para instalar todas las dependencias del package.json**.
+**Cuando se descargue el proyecto haga un "npm install" en consola en la posicion dentro de taxi24 para instalar todas las dependencias del package.json**.
 
 **Para hacer una creacion rapida realice la ejecucion del script introduciendo en consola "npm run seedAll" donde la ruta en el json es "seedAll": "ts-node src/scripts/seedAll.ts"**. 
 
