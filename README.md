@@ -2,8 +2,11 @@
 
 Documentacion:
 **Cuando se descargue el proyecto haga un "npm install" en consola para instalar todas las dependencias del package.json**.
+
 **Para hacer una creacion rapida realice la ejecucion del script introduciendo en consola "npm run seedAll" donde la ruta en el json es "seedAll": "ts-node src/scripts/seedAll.ts"**. 
+
 **programas necesarios para la prueba: base de datos "Mongodb", "Postman"**.
+
 **.env**
 MONGO_URI = "mongodb://localhost:27017/autobus"
 PORT=3001
