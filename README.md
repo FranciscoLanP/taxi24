@@ -8,6 +8,7 @@ Documentacion:
 **programas necesarios para la prueba: base de datos "Mongodb", "Postman"**.
 
 **.env**
+Crea este archivo y agregale lo siguiente:
 MONGO_URI = "mongodb://localhost:27017/autobus"
 PORT=3001
 
