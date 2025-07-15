@@ -1,107 +1,200 @@
-# taxi24
+---
 
-Documentacion:
-**Cuando se descargue el proyecto haga un "npm install" en consola en la posicion dentro de taxi24 para instalar todas las dependencias del package.json**.
+# **Taxi24 - Documentación**
 
-**Para hacer una creacion rapida realice la ejecucion del script introduciendo en consola "npm run seedAll" donde la ruta en el json es "seedAll": "ts-node src/scripts/seedAll.ts"**. 
+## **1. Instalación y Configuración Inicial**
 
-**programas necesarios para la prueba: base de datos "Mongodb", "Postman"**.
+### **Requisitos previos**
 
-**.env**
-Crea este archivo y agregale lo siguiente:
-MONGO_URI = "mongodb://localhost:27017/autobus"
+* **Node.js y npm** (última versión estable recomendada)
+* **MongoDB** (en local o en un servidor remoto)
+* **Postman** (para realizar las pruebas de las rutas)
+
+### **Instalación de dependencias**
+
+Dentro de la carpeta raíz del proyecto (`taxi24`), ejecutar en consola:
+
+```bash
+npm install
+```
+
+Esto instalará todas las dependencias definidas en el `package.json`.
+
+### **Archivo .env**
+
+Crear un archivo **.env** en la raíz del proyecto con el siguiente contenido:
+
+```env
+MONGO_URI=mongodb://localhost:27017/autobus
 PORT=3001
+```
 
-**Creacion  y Actualizacion de documentos via Postman**
-AllCreated: En postman pondremos el metodo "POST" por "body" y "raw"
-AllUpdated: En postman ponderemos el metodo "PUT" por "body" y "raw"
-ViajesToggle" En postman pondremos el metodo "PUT" por "body" y "raw"
-**Conductores* 
-            ruta created:
-                http://localhost:3001/api/conductor
-            ruta updated:
-                http://localhost:3001/api/conductor/:id
+Puedes cambiar el nombre de la base de datos (`autobus`) o el puerto (`3001`) si lo necesitas.
 
-body Ejemplo:
-            {
-                "nombre": "string"
-            }
-----------------------------------------------------------------------
-**Personas*
-        ruta created:
-             http://localhost:3001/api/pasajero
-        ruta updated:
-             http://localhost:3001/api/pasajero/:id
+### **Carga rápida de datos iniciales (Seeder)**
 
-body Ejemplo:
-            {
-                "pasajero": "string"
-            }
------------------------------------------------------------------------
-**Viajes*
-        ruta created:
-            http://localhost:3001/api/viajes
-        ruta updated:
-            http://localhost:3001/api/viajes/:id
-        ruta toggel viaje completado:
-            http://localhost:3001/api/viajes/:id/status
+Para insertar datos de prueba de manera automática, ejecutar:
 
-body Ejemplo update:
-            {
-                "piloto": "string",
-                "viaje_activo": boolean,
-                "conductor_id": "string"
-            }
-body Ejemplo toggle            
-            {
-                "viaje_activo": boolean
-            }
+```bash
+npm run seedAll
+```
 
+Este comando corre el script definido en `package.json`:
 
-**Obtencion de los datos**
+```
+"seedAll": "ts-node src/scripts/seedAll.ts"
+```
 
-**Conductores**
+---
 
-**Obtener una lista de  todos los conductores. 
-metodo "GET"
-ruta: 
-     http://localhost:3001/api/conductor
+## **2. Endpoints y Operaciones**
 
-**obtener una lista de todos los conductores "DISPONIBLES".
-metodo "GET"
-ruta:
-     http://localhost:3001/api/conductor-disponibles
+Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://localhost:3001/api/)** (a menos que cambies el puerto en el `.env`).
 
-**obtener conductor especifico por "ID".
-metodo "GET"
-ruta: 
-     http://localhost:3001/api/conductor/:id
------------------------------------------------------------------------
-**Viajes**
+### **2.1 Conductores**
 
-**Crear una nueva solicitud de "Viaje" asignando un conductor a un piloto.
-metodo "POST"
-ruta:
-    http://localhost:3001/api/viajes
+#### **Crear Conductor**
 
-**Completar un viaje. "cambiar a false para completar el viaje" 
-metodo "PUT"
-ruta:
-    http://localhost:3001/api/viajes/:id/status
+* **Método:** `POST`
+* **Ruta:** `/conductor`
+* **Body (raw / JSON):**
 
-**Obtener todos los viajes Activos.
-metodo "GET"
-ruta:
-    http://localhost:3001/api/viajes
------------------------------------------------------------------------
-**Pasajeros**
+```json
+{
+    "nombre": "string"
+}
+```
 
-**Obtener una lista de todos los pasajeros. 
-metodo "GET"
-ruta:
-    http://localhost:3001/api/pasajero
+#### **Actualizar Conductor**
 
-**Obtener un pasajero en especifico por su "ID" 
-metodo "PUT"
-ruta:
-    http://localhost:3001/api/pasajero/:id
+* **Método:** `PUT`
+* **Ruta:** `/conductor/:id`
+* **Body (raw / JSON):**
+
+```json
+{
+    "nombre": "string"
+}
+```
+
+#### **Obtener todos los Conductores**
+
+* **Método:** `GET`
+* **Ruta:** `/conductor`
+
+#### **Obtener Conductores Disponibles**
+
+* **Método:** `GET`
+* **Ruta:** `/conductor-disponibles`
+
+#### **Obtener Conductor por ID**
+
+* **Método:** `GET`
+* **Ruta:** `/conductor/:id`
+
+---
+
+### **2.2 Pasajeros**
+
+#### **Crear Pasajero**
+
+* **Método:** `POST`
+* **Ruta:** `/pasajero`
+* **Body (raw / JSON):**
+
+```json
+{
+    "pasajero": "string"
+}
+```
+
+#### **Actualizar Pasajero**
+
+* **Método:** `PUT`
+* **Ruta:** `/pasajero/:id`
+* **Body (raw / JSON):**
+
+```json
+{
+    "pasajero": "string"
+}
+```
+
+#### **Obtener todos los Pasajeros**
+
+* **Método:** `GET`
+* **Ruta:** `/pasajero`
+
+#### **Obtener Pasajero por ID**
+
+* **Método:** `GET`
+* **Ruta:** `/pasajero/:id`
+
+---
+
+### **2.3 Viajes**
+
+#### **Crear Viaje**
+
+* **Método:** `POST`
+* **Ruta:** `/viajes`
+* **Body (raw / JSON):**
+
+```json
+{
+    "piloto": "string",
+    "viaje_activo": true,
+    "conductor_id": "string"
+}
+```
+
+#### **Actualizar Viaje**
+
+* **Método:** `PUT`
+* **Ruta:** `/viajes/:id`
+* **Body (raw / JSON):**
+
+```json
+{
+    "piloto": "string",
+    "viaje_activo": true,
+    "conductor_id": "string"
+}
+```
+
+#### **Cambiar estado de Viaje (Toggle Completado)**
+
+* **Método:** `PUT`
+* **Ruta:** `/viajes/:id/status`
+* **Body (raw / JSON):**
+
+```json
+{
+    "viaje_activo": false
+}
+```
+
+> **Nota:** Cambiar `viaje_activo` a `false` indica que el viaje ha sido completado.
+
+#### **Obtener todos los Viajes Activos**
+
+* **Método:** `GET`
+* **Ruta:** `/viajes`
+
+---
+
+## **3. Notas Adicionales**
+
+✅ **Pruebas en Postman:**
+
+* Selecciona siempre `Body > raw > JSON` para las peticiones `POST` y `PUT`.
+* Verifica que la base de datos MongoDB esté corriendo antes de realizar cualquier prueba.
+
+✅ **Estructura de datos esperada:**
+Asegúrate de enviar siempre los campos requeridos en el formato correcto (por ejemplo, `boolean` sin comillas).
+
+✅ **Modificación del puerto o la base de datos:**
+Si modificas valores en el `.env`, reinicia el servidor para aplicar los cambios.
+
+---
+
