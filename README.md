@@ -60,10 +60,10 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 ```json
 {
-    "nombre": string,
-    "cedula": string,
-    "telefono": string,
-    "correo"?: string
+    "nombre": "string",
+    "cedula": "string",
+    "telefono": "string",
+    "correo"?: "string"
 }
 ```
 
@@ -75,10 +75,10 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 ```json
 {
-    "nombre": string,
-    "cedula": string,
-    "telefono": string,
-    "correo"?: string
+    "nombre": "string",
+    "cedula": "string",
+    "telefono": "string",
+    "correo"?: "string"
 }
 ```
 
@@ -108,10 +108,10 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 ```json
 {
-    "nombre": string,
-    "cedula": string,
-    "telefono": string,
-    "correo"?: string
+    "nombre": "string",
+    "cedula": "string",
+    "telefono": "string",
+    "correo"?: "string"
 }
 ```
 
@@ -123,10 +123,10 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 ```json
 {
-    "nombre": string,
-    "cedula": string,
-    "telefono": string,
-    "correo"?: string
+    "nombre": "string",
+    "cedula": "string",
+    "telefono": "string",
+    "correo"?: "string"
 }
 ```
 
