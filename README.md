@@ -1,14 +1,12 @@
----
-
 # **Taxi24 - Documentación**
 
 ## **1. Instalación y Configuración Inicial**
 
 ### **Requisitos previos**
 
-* **Node.js y npm** (última versión estable recomendada)
-* **MongoDB** (en local o en un servidor remoto)
-* **Postman** (para realizar las pruebas de las rutas)
+**Node.js y npm** (última versión estable recomendada)
+**MongoDB** (en local o en un servidor remoto)
+**Postman** (para realizar las pruebas de las rutas)
 
 ### **Instalación de dependencias**
 
@@ -45,8 +43,6 @@ Este comando corre el script definido en `package.json`:
 "seedAll": "ts-node src/scripts/seedAll.ts"
 ```
 
----
-
 ## **2. Endpoints y Operaciones**
 
 Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://localhost:3001/api/)** (a menos que cambies el puerto en el `.env`).
@@ -55,9 +51,9 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 #### **Crear Conductor**
 
-* **Método:** `POST`
-* **Ruta:** `/conductor`
-* **Body (raw / JSON):**
+**Método:** `POST`
+**Ruta:** `/conductor`
+**Body (raw / JSON):**
 
 ```json
 {
@@ -67,9 +63,9 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 #### **Actualizar Conductor**
 
-* **Método:** `PUT`
-* **Ruta:** `/conductor/:id`
-* **Body (raw / JSON):**
+**Método:** `PUT`
+**Ruta:** `/conductor/:id`
+**Body (raw / JSON):**
 
 ```json
 {
@@ -79,20 +75,19 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 #### **Obtener todos los Conductores**
 
-* **Método:** `GET`
-* **Ruta:** `/conductor`
+**Método:** `GET`
+**Ruta:** `/conductor`
 
 #### **Obtener Conductores Disponibles**
 
-* **Método:** `GET`
-* **Ruta:** `/conductor-disponibles`
+**Método:** `GET`
+**Ruta:** `/conductor-disponibles`
 
 #### **Obtener Conductor por ID**
 
-* **Método:** `GET`
-* **Ruta:** `/conductor/:id`
+**Método:** `GET`
+**Ruta:** `/conductor/:id`
 
----
 
 ### **2.2 Pasajeros**
 
@@ -122,23 +117,22 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 #### **Obtener todos los Pasajeros**
 
-* **Método:** `GET`
-* **Ruta:** `/pasajero`
+**Método:** `GET`
+**Ruta:** `/pasajero`
 
 #### **Obtener Pasajero por ID**
 
-* **Método:** `GET`
-* **Ruta:** `/pasajero/:id`
+**Método:** `GET`
+**Ruta:** `/pasajero/:id`
 
----
 
 ### **2.3 Viajes**
 
 #### **Crear Viaje**
 
-* **Método:** `POST`
-* **Ruta:** `/viajes`
-* **Body (raw / JSON):**
+**Método:** `POST`
+**Ruta:** `/viajes`
+**Body (raw / JSON):**
 
 ```json
 {
@@ -150,9 +144,9 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 #### **Actualizar Viaje**
 
-* **Método:** `PUT`
-* **Ruta:** `/viajes/:id`
-* **Body (raw / JSON):**
+**Método:** `PUT`
+**Ruta:** `/viajes/:id`
+**Body (raw / JSON):**
 
 ```json
 {
@@ -164,9 +158,9 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 #### **Cambiar estado de Viaje (Toggle Completado)**
 
-* **Método:** `PUT`
-* **Ruta:** `/viajes/:id/status`
-* **Body (raw / JSON):**
+**Método:** `PUT`
+**Ruta:** `/viajes/:id/status`
+**Body (raw / JSON):**
 
 ```json
 {
@@ -178,8 +172,8 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 #### **Obtener todos los Viajes Activos**
 
-* **Método:** `GET`
-* **Ruta:** `/viajes`
+**Método:** `GET`
+**Ruta:** `/viajes`
 
 ---
 
