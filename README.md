@@ -42,7 +42,10 @@ Este comando corre el script definido en `package.json`:
 ```
 "seedAll": "ts-node src/scripts/seedAll.ts"
 ```
-
+### **Para iniciar el proyecto**
+```bash
+npm run dev
+```
 ## **2. Endpoints y Operaciones**
 
 Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://localhost:3001/api/)** (a menos que cambies el puerto en el `.env`).
@@ -50,14 +53,17 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 ### **2.1 Conductores**
 
 #### **Crear Conductor**
-
+**?: significa que es opcional puede o no tener este campo**
 **Método:** `POST`
 **Ruta:** `/conductor`
 **Body (raw / JSON):**
 
 ```json
 {
-    "nombre": "string"
+    nombre: string,
+    cedula: string,
+    telefono: string,
+    correo?: string
 }
 ```
 
@@ -69,7 +75,10 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 
 ```json
 {
-    "nombre": "string"
+    nombre: string,
+    cedula: string,
+    telefono: string,
+    correo?: string
 }
 ```
 
@@ -92,26 +101,32 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 ### **2.2 Pasajeros**
 
 #### **Crear Pasajero**
-
+**?: significa que es opcional puede o no tener este campo**
 * **Método:** `POST`
 * **Ruta:** `/pasajero`
 * **Body (raw / JSON):**
 
 ```json
 {
-    "pasajero": "string"
+    nombre: string,
+    cedula: string,
+    telefono: string,
+    correo?: string
 }
 ```
 
 #### **Actualizar Pasajero**
-
+**?: significa que es opcional puede o no tener este campo**
 * **Método:** `PUT`
 * **Ruta:** `/pasajero/:id`
 * **Body (raw / JSON):**
 
 ```json
 {
-    "pasajero": "string"
+     nombre: string,
+    cedula: string,
+    telefono: string,
+    correo?: string
 }
 ```
 
@@ -138,7 +153,8 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 {
     "piloto": "string",
     "viaje_activo": true,
-    "conductor_id": "string"
+    "conductor_id": "string",
+    "pasajero_id": "string",
 }
 ```
 
@@ -152,7 +168,8 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 {
     "piloto": "string",
     "viaje_activo": true,
-    "conductor_id": "string"
+    "conductor_id": "string",
+    "pasajero_id": "string"
 }
 ```
 
