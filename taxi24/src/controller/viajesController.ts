@@ -45,8 +45,8 @@ export const createViajes = async (
     next: NextFunction
 ): Promise<void> => {
     try {
-        const { piloto, viaje_activo, conductor_id } = req.body;
-        const newItem = new Viajes({ piloto, viaje_activo, conductor_id });
+        const { piloto, viaje_activo, conductor_id, pasajero_id} = req.body;
+        const newItem = new Viajes({ piloto, viaje_activo, conductor_id, pasajero_id });
         const saved = await newItem.save();
         res.status(201).json(saved)
     } catch (error) {

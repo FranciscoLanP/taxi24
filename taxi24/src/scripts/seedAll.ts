@@ -10,8 +10,8 @@ const runSeeds = async () => {
 		await connectDB();
 		const context: SeedContext = {};
 		await seedConductor(context);
-		await seedViajes(context)
 		await seedPasajero(context)
+		await seedViajes(context)
 			;
 		console.log("✅All seed scripts executed successfully");
 		process.exit(0);

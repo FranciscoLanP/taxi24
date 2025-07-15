@@ -12,7 +12,7 @@ export const getAllConductor = async (
     try {
         const { search } = req.query as { search?: string };
         const filter = search
-            ? { pasajero: { $regex: search, $options: "i" } }
+            ? { nombre: { $regex: search, $options: "i" } }
             : {};
         const items = await Conductor.find(filter)
         res.status(200).json(items);
@@ -67,8 +67,8 @@ export const createConductor = async (
     next: NextFunction
 ): Promise<void> => {
     try {
-        const { nombre } = req.body;
-        const newItem = new Conductor({ nombre });
+        const { nombre, cedula, telefono, correo  } = req.body;
+        const newItem = new Conductor({ nombre, cedula, telefono, correo });
         const saved = await newItem.save();
         res.status(201).json(saved)
     } catch (error) {

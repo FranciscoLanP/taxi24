@@ -9,7 +9,7 @@ export const getAllPasajero = async (
     try {
         const { search } = req.query as { search?: string };
         const filter = search
-            ? { pasajero: { $regex: search, $options: "i" } }
+            ? { nombre: { $regex: search, $options: "i" } }
             : {};
         const items = await Pasajero.find(filter)
         res.status(200).json(items);
@@ -42,13 +42,13 @@ export const createPasajero = async (
     next: NextFunction
 ): Promise<void> => {
     try {
-        const { pasajero } = req.body;
-        const exists = await Pasajero.findOne({ pasajero });
+        const { nombre, cedula, telefono, correo } = req.body;
+        const exists = await Pasajero.findOne({ nombre, cedula, telefono, correo });
         if (exists) {
             res.status(409).json({ message: "Pasajero duplicado" });
             return;
         }
-        const newItem = new Pasajero({ pasajero });
+        const newItem = new Pasajero({ nombre, cedula, telefono, correo });
         const saved = await newItem.save();
         res.status(201).json(saved)
     } catch (error) {
