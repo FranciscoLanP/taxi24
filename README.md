@@ -154,7 +154,7 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
     "piloto": "string",
     "viaje_activo": true,
     "conductor_id": "string",
-    "pasajero_id": "string",
+    "pasajero_id": "string"
 }
 ```
 
