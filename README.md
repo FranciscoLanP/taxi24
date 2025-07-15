@@ -53,7 +53,7 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 ### **2.1 Conductores**
 
 #### **Crear Conductor**
-**?: significa que es opcional puede o no tener este campo**
+**correo: es un campo opcional se puede omitir o eliminar del json**
 **Método:** `POST`
 **Ruta:** `/conductor`
 **Body (raw / JSON):**
@@ -63,12 +63,12 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
     "nombre": "string",
     "cedula": "string",
     "telefono": "string",
-    "correo"?: "string"
+    "correo": "string"
 }
 ```
 
 #### **Actualizar Conductor**
-
+**correo: es un campo opcional se puede omitir o eliminar del json**
 **Método:** `PUT`
 **Ruta:** `/conductor/:id`
 **Body (raw / JSON):**
@@ -78,7 +78,7 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
     "nombre": "string",
     "cedula": "string",
     "telefono": "string",
-    "correo"?: "string"
+    "correo": "string"
 }
 ```
 
@@ -101,7 +101,7 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
 ### **2.2 Pasajeros**
 
 #### **Crear Pasajero**
-**?: significa que es opcional puede o no tener este campo**
+**correo: es un campo opcional se puede omitir o eliminar del json**
 * **Método:** `POST`
 * **Ruta:** `/pasajero`
 * **Body (raw / JSON):**
@@ -111,12 +111,12 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
     "nombre": "string",
     "cedula": "string",
     "telefono": "string",
-    "correo"?: "string"
+    "correo": "string"
 }
 ```
 
 #### **Actualizar Pasajero**
-**?: significa que es opcional puede o no tener este campo**
+**correo: es un campo opcional se puede omitir o eliminar del json**
 * **Método:** `PUT`
 * **Ruta:** `/pasajero/:id`
 * **Body (raw / JSON):**
@@ -126,7 +126,7 @@ Todos los endpoints están expuestos en **[http://localhost:3001/api/](http://lo
     "nombre": "string",
     "cedula": "string",
     "telefono": "string",
-    "correo"?: "string"
+    "correo": "string"
 }
 ```
 
