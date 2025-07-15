@@ -1,6 +1,8 @@
 # **Taxi24 - Documentación**
 
 ## **1. Instalación y Configuración Inicial**
+para descargar el proyecto en git presionamos el boton <img width="118" height="45" alt="image" src="https://github.com/user-attachments/assets/a5169dc1-e508-4609-b49d-e3e1e6d2abab" /> y vemos la ultma opcion que es <img width="390" height="41" alt="image" src="https://github.com/user-attachments/assets/bcaddd45-1ebb-4416-a6e2-80dee7925ce8" />
+
 
 ### **Requisitos previos**
 
